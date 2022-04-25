@@ -22,9 +22,12 @@
                 id="wall">
             <img src="./assets/istockphoto-1312314989-612x612 - Copy.jpg" alt=""
                 id="wallPainted1">
+
+                    <a-asset-item id="imp" src="assets\imp_character\scene.gltf"></a-asset-item>
+                   <!--  <a-asset-item id="staff" src="models/staff/scene.gltf"></a-asset-item> -->
         </a-assets>
         <a-entity id="player" camera kinematic-body universal-controls position="0 1.6 0">
-            <a-cursor fuse="true" fuse-timeout="800">0</a-cursor>
+            <!-- <a-cursor fuse="true" fuse-timeout="800">0</a-cursor> -->
             <a-text value="" width="5" id="score" color="black" anchor="center" position="0 -0.5 -1" align="center">
             </a-text>
 
@@ -37,11 +40,20 @@
         <a-entity id="#wall"></a-entity>
         <a-entity id="#premios"></a-entity>
         <!-- <a-sky color="#fff"></a-sky> -->
+
+        <a-entity id='ball'
+          position="0 1 -4"
+          dynamic-body
+    >
+   
+    </a-entity> -->
+
     </a-scene>
 
     <!-- Howler script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./main.js"></script>
+    <script src="./js/maps.js"></script>
+    <script src="./js/main.js"></script>
     
 </body>
 

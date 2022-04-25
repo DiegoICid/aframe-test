@@ -6,28 +6,32 @@
  let sound = new Howl({
    src: ['./assets/y2mate (mp3cut.net).mp3']
  });
+ 
+ let soundPasos = new Howl({
+   src: ['./assets/345560__inspectorj__footsteps-stones-a.wav']
+ });
 
 
- let mapa1 = [
-   [1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1],
-   [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
-   [1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
-   [1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 3, 0, 0, 1],
+/*  let mapa1 = [
+   [1, 1, 0, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1],
+   [1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+   [1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+   [1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1],
    [1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1],
-   [1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1],
-   [1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
-   [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1],
-   [1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
-   [1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
-   [1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
-   [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1],
-   [1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1],
-   [1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 3, 0, 0, 1],
-   [1, 0, 0, 0, 0, 0, 1, 2, 1, 0, 1, 1, 0, 1, 0, 1],
-   [1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1],
-   [1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1],
-   [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1],
-   [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+   [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
+   [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+   [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1],
+   [1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+   [1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+   [1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+   [1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1],
+   [1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1],
+   [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
+   [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1],
+   [1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1],
+   [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1],
+   [1, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 0, 1],
+   [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
  ];
  let mapa = [
@@ -51,7 +55,9 @@
    [1, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
- ];
+   
+ ]; */
+
 
  // Define objects
  const TAMANO_PARED = 3;
@@ -65,12 +71,12 @@
  //const paredes = document.querySelector("#paredes");
  const premios = document.getElementById("#premios");
  const scoreItem = document.querySelector("#score");
+ const imp = document.querySelector("#imp-model");
 
  // Walking through the array
 
-
-
- for (let x = 0; x < mapa.length; x++) {
+function mapRender(mapa) {
+  for (let x = 0; x < mapa.length; x++) {
    for (let z = 0; z < mapa[x].length; z++) {
      //console.log("x es " + x + " z es " + z);
      let posicion =
@@ -118,36 +124,63 @@
      }
    }
  }
+}
+
+mapRender(mapa);
+ 
  setTimeout(() => {
    sound.play();
 
  }, 3000);
 
- /*  setTimeout(() => {
-    let jugador = document.getElementById("player");
-    let jugadorPosicion = jugador.getAttribute("position");
-    console.log("Jugador: " + jugadorPosicion.y);
 
-  }, 1000);; */
+// plays footstep sounds while walking
+ document.addEventListener('keypress', (event) => {
+  /* let name = event.key;
+  let code = event.code; */
+  if (((event.code == "KeyW") || (event.code == "KeyS")) && (!soundPasos.playing())) {
+      soundPasos.play();
+  }});
+ 
+ document.addEventListener('keyup', (event) => {
+  /* let name = event.key;
+  let code = event.code; */
+  if ((event.code == "KeyW") || (event.code == "KeyS")) {
+      soundPasos.stop();
+  }});
+
+
+
+ 
 
 
  let jugador = document.getElementById("player");
  let jugadorPosicion = jugador.getAttribute("position");
+ let contador = 0;
  jugador.addEventListener('componentchanged', function (evt) {
 
    if (evt.detail.name !== 'position') {
      return;
-   }
-   console.log(evt.detail.newData);
-   if (evt.detail.newData.x < -24) {
-     console.log("entrando a la zona");
+    }
+    console.log(evt.detail.newData);
+    //soundPasos.play();
+   if ((evt.detail.newData.x < -25) && (contador == 0)) {
+     contador += 1;
+    setTimeout(() => {
+      console.log("entrando a la zona");
+     mapRender(mapa1);
+     
+  
+    }, 2000);
+    //mapRender(mapa1);
+
+     
    }
  
    
    
   });
-  
-  
+
 
 
  
